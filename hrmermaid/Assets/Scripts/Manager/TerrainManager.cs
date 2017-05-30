@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour {
 
+	CameraControls cameraControls;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +13,6 @@ public class TerrainManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Debug.Log ("cameraControls.OrthographicBounds () " + CameraExtensions.OrthographicBounds ());
 	}
 }

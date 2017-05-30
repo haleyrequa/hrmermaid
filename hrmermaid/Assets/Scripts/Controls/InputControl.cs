@@ -5,10 +5,10 @@ using UnityEngine;
 public class InputControl : MonoBehaviour {
 
 	Player player;
-//	CameraControls camera;
+	CameraControls camera;
 
 	void Start() {
-//		camera = Camera.main.GetComponent <CameraControls>();
+		camera = Camera.main.GetComponent <CameraControls>();
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
 	}
 
@@ -33,13 +33,21 @@ public class InputControl : MonoBehaviour {
 		if (Input.GetKey(KeyCode.DownArrow))
 			player.Travel (Vector3.down);
 
-//		if (Input.GetKey (KeyCode.LeftArrow))
+		if (Input.GetKeyUp (KeyCode.LeftArrow))
+			camera.Turn (0f);
+
+		if (Input.GetKeyDown (KeyCode.LeftArrow))
+			camera.Turn (-1f);
 //			player.Turn (-1f);
-////			camera.SetXAngle (-1f);
-//
-//		if (Input.GetKey (KeyCode.RightArrow))
+		//			camera.SetXAngle (-1f);
+
+		if (Input.GetKeyUp (KeyCode.RightArrow))
+			camera.Turn (0f);
+
+		if (Input.GetKeyDown (KeyCode.RightArrow))
+			camera.Turn (1f);
 //			player.Turn(1f);
-////			camera.SetXAngle (1f);
+//			camera.SetXAngle (1f);
 	}
 
 }

@@ -15,10 +15,12 @@ public class Player : GameEntity {
 		cam = Camera.main.GetComponent<CameraControls> ();
 	}
 
-	float speed = 10f;
 	public void Travel (Vector3 direction) {
-		transform.LookAt (transform.position + direction);
-		transform.position += direction * speed;
-		cam.SetXAngle (transform.rotation.eulerAngles.y);
+		
+		transform.LookAt (transform.position + direction + transform.forward);
+		transform.position += direction * cruisinSpeed;
+//		cam.Turn (transform.rotation.y);
+//		Debug.Log (transform.rotation.y + " >>> " + transform.eulerAngles.y);
+		//cam.SetXAngle (transform.rotation.eulerAngles.y);
 	}
 }
