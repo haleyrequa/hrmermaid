@@ -9,6 +9,7 @@ public class Player : GameEntity {
 	public override float cruisinSpeed { get { return 20f; } }
 
 	private float rotationSpeed = 0.1f;
+	private Vector3 direction;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,7 @@ public class Player : GameEntity {
 	}
 
 	public void Travel (Vector3 direction) {
-		
+		this.direction = direction;
 		transform.LookAt (transform.position + direction + transform.forward);
 		transform.position += direction * cruisinSpeed;
 //		cam.Turn (transform.rotation.y);

@@ -16,9 +16,9 @@ public class TerrainManager : MonoBehaviour {
 
 		cameraBounds = CameraExtensions.OrthographicBoundsWorld ();
 		Vector3 tileSize = terrain.GetComponent<Terrain>().terrainData.size;//new Vector3 (2f, 1f, 2f);
-		int xCount = Mathf.Abs((int)((cameraBounds.max.x - cameraBounds.min.x) / tileSize.x)), // TODO rename width and make class variable
+		int xCount = 1,//Mathf.Abs((int)((cameraBounds.max.x - cameraBounds.min.x) / tileSize.x)), // TODO rename width and make class variable
 		yCount = 1,
-		zCount = Mathf.Abs((int)((cameraBounds.max.z - cameraBounds.min.z) / tileSize.z));
+		zCount = 1;//= Mathf.Abs((int)((cameraBounds.max.z - cameraBounds.min.z) / tileSize.z));
 
 		terrains = new Tile[xCount * yCount *  zCount];
 //		terrains = new Tile[xCount, 1, zCount];

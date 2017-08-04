@@ -15,17 +15,25 @@ public class InputControl : MonoBehaviour {
 	void Update() {
 
 
-		if (Input.GetKey (KeyCode.W))
+		if (Input.GetKey (KeyCode.W)) {
 			player.Travel (Vector3.forward);
+//			camera.TurnDirection(Vector3.forward);
+		}
 
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.A)) {
 			player.Travel (Vector3.left);
+			camera.TurnDirection(Vector3.left);
+		}
 
-		if (Input.GetKey (KeyCode.S))
+		if (Input.GetKey (KeyCode.S)) {
 			player.Travel (Vector3.back);
+//			camera.TurnDirection(Vector3.back);
+		}
 
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(KeyCode.D)) {
 			player.Travel (Vector3.right);
+			camera.TurnDirection(Vector3.right);
+		}
 
 		if (Input.GetKey(KeyCode.UpArrow))
 			player.Travel (Vector3.up);
